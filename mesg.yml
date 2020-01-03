@@ -1,0 +1,15 @@
+name: service-filter
+sid: service-filter
+description: 'Filter ther value'
+tasks:
+  filter:
+    inputs:
+      data:
+        type: Any
+      predicate:
+        type: String
+      value:
+        type: Any
+    outputs:
+      match:
+        type: String
