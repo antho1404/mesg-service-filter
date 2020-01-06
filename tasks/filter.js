@@ -1,12 +1,6 @@
-module.exports = ({ data, predicate, value, state }) => {
+module.exports = ({ data, predicate, value }) => {
   const res = {
-    eq: (data, value) => {
-      if (typeof data === 'string' && typeof value === 'string') {
-        return data.toLowerCase() === value.toLowerCase()
-      } else {
-        return data === value
-      }
-    },
+    eq: (data, value) => data === value,
     neq: (data, value) => data !== value,
     gt: (data, value) => data > value,
     gte: (data, value) => data >= value,
@@ -14,8 +8,6 @@ module.exports = ({ data, predicate, value, state }) => {
     lte: (data, value) => data <= value,
     cont: (data, value) => data.indexOf(value) >= 0
   }[predicate](data, value)
-  return {
-    match: res ? 'TRUE' : 'FALSE',
-    data: state
-  }
+
+  return { match: res ? 'TRUE' : 'FALSE' }
 }

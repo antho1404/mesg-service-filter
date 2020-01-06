@@ -10,10 +10,6 @@ tasks:
         type: String
       value:
         type: Any
-      state: 
-        type: Any
     outputs:
       match:
         type: String
-      data:
-        type: Object
