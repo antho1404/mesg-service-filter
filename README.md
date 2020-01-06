@@ -37,14 +37,18 @@ Task key: `filter`
 
 ##### Inputs
 
-| **Name**      | **Key**     | **Type** | **Description**                                                    |
-| ------------- | ----------- | -------- | ------------------------------------------------------------------ |
-| **data**      | `data`      | `Any`    | Data is first value of conditions.                                 |
-| **predicate** | `predicate` | `String` | Predicate is conditions `( eq | neq | gt | gte | lt | lte | cont)` |
-| **value**     | `value`     | `Any`    | Value is second value for conditions.                              |
+| **Name**      | **Key**     | **Type** | **Description**                       |
+| ------------- | ----------- | -------- | ------------------------------------- |
+| **data**      | `data`      | `Any`    | Data is first value of conditions.    |
+| **predicate** | `predicate` | `String` | Predicate is conditions               |
+| **value**     | `value`     | `Any`    | Value is second value for conditions. |
+
+**ps:** predicate values are `( eq | neq | gt | gte | lt | lte | cont)`.
 
 ##### Outputs
 
-| **Name**  | **Key** | **Type** | **Description**                                 |
-| --------- | ------- | -------- | ----------------------------------------------- |
-| **match** | `match` | `String` | Return boolean as string `( "TRUE" | "FALSE" )` |
+| **Name**  | **Key** | **Type** | **Description**          |
+| --------- | ------- | -------- | ------------------------ |
+| **match** | `match` | `String` | Return boolean as string |
+
+**ps:** Match will return `( "TRUE" | "FALSE" )`.
