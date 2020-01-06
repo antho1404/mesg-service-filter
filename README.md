@@ -1,4 +1,4 @@
-# myservice (ID: myservice)
+# Service filter (ID: service-filter)
 
 Description of my service
 
@@ -8,10 +8,8 @@ Description of my service
   - [MESG Engine](#MESG-Engine)
   - [Deploy the Service](#Service)
 - [Definitions](#Definitions)
-  - [Events](#Events)
-    - [started](#started)
   - [Tasks](#Tasks)
-    - [taskX](#taskX)
+    - [filter](#filter)
 
 ## Installation
 
@@ -22,7 +20,7 @@ This service requires [MESG Engine](https://github.com/mesg-foundation/engine) t
 You can install MESG Engine by running the following command or [follow the installation guide](https://docs.mesg.com/guide/start-here/installation.html).
 
 ```bash
-bash <(curl -fsSL https://mesg.com/install)
+npm install -g @mesg/cli
 ```
 
 ### Deploy the Service
@@ -31,36 +29,22 @@ To deploy this service, go to [this service page](https://marketplace.mesg.com/s
 
 ## Definitions
 
-### Events
-
-<h4 id="started">started</h4>
-
-Event key: `started`
-
-
-
-| **Name** | **Key** | **Type** | **Description** |
-| --- | --- | --- | --- |
-| **x** | `x` | `Boolean` |  |
-
 ### Tasks
 
-<h4 id="taskX">taskX</h4>
+<h4 id="filter">filter</h4>
 
-Task key: `taskX`
-
-
+Task key: `filter`
 
 ##### Inputs
 
-| **Name** | **Key** | **Type** | **Description** |
-| --- | --- | --- | --- |
-| **foo** | `foo` | `String` |  |
-| **bar** | `bar` | `String` |  |
-  
+| **Name**      | **Key**     | **Type** | **Description**                                                    |
+| ------------- | ----------- | -------- | ------------------------------------------------------------------ |
+| **data**      | `data`      | `Any`    | Data is first value of conditions.                                 |
+| **predicate** | `predicate` | `String` | Predicate is conditions `( eq | neq | gt | gte | lt | lte | cont)` |
+| **value**     | `value`     | `Any`    | Value is second value for conditions.                              |
+
 ##### Outputs
 
-| **Name** | **Key** | **Type** | **Description** |
-| --- | --- | --- | --- |
-| **message** | `message` | `String` |  |
-
+| **Name**  | **Key** | **Type** | **Description**                                 |
+| --------- | ------- | -------- | ----------------------------------------------- |
+| **match** | `match` | `String` | Return boolean as string `( "TRUE" | "FALSE" )` |
