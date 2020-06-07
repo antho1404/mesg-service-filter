@@ -1,6 +1,6 @@
-const Service = require('@mesg/service')
+const Service = require('@liteflow/service')
 const filter = require('./tasks/filter')
 
-const mesg = new Service()
+const liteflow = new Service()
 
-mesg.listenTask({ filter }).on('error', error => console.error(error))
+liteflow.listenTask({ filter }).on('error', error => console.error(error))

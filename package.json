@@ -3,6 +3,6 @@
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
-    "@mesg/service": "^0.1.0"
+    "@liteflow/service": "^1.0.7"
   }
 }
